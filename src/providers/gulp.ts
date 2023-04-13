@@ -117,7 +117,7 @@ export class GulpTaskProvider extends TaskExplorerProvider implements TaskExplor
             if (contents) {
                 for (const c of contents)
                 {
-                    const line = c.match(/(\[[\w\W][^\]]+\][ ](├─┬|├──|└──|└─┬) )([\w\-]+)/i);
+                    const line = c.match(/(\[[\w\W][^\]]+\][ ](├─┬|├──|└──|└─┬) )([\S]+)/i);
                     if (line && line.length > 3 && line[3])
                     {
                         log.value("   Found target (gulp --tasks)", line[3], 3, logPad);
